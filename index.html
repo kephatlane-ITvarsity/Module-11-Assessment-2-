@@ -28,6 +28,8 @@
             <p class="lead"><strong><em>The Marvelous taste from South African meals.</em></strong></p>
         </div>
         
+	    <!-----------Team column--------->
+	    
         <div class="container team">
             <img src="img/food.jpg" class="img-thumbnail rounded-circle" width="100"/>
             <img src="img/food1.jpg" class="img-thumbnail rounded-circle" width="100"/>
@@ -40,6 +42,8 @@
             <img src="img/food8.jpg" class="img-thumbnail rounded-circle" width="100"/>
         </div>
         
+	    <!-----------Posts column--------->
+	    
         <div class="row container mx-auto">
             <div id="getAll">
                 <h1 style="text-align: center;"><b>Full house Gatsby</b></h1>
@@ -219,15 +223,22 @@
                 <hr>
             </div>
         </div>
-        
+
+		<!-----------Footer column--------->
+
         <footer class="container footer-section">
             <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy; 2017-2019 Company, Inc, &middot; <a href="#">Privacy</a> &middot; <a href="#"></a></p>     
         </footer>   
 
+	<!-----------JavaScript column--------->
+
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script>
+		
+	// get posts  functions // 
+		
             var rootPath;
             
             function getAllPosts(){
@@ -248,6 +259,8 @@
                 setActiveLink(category);
             }
             
+	// fetch posts script functions //
+		
             function fetchPosts(category){
                 fetch(rootPath + 'get-posts/?category=' + category)
                     .then(function(response){
@@ -257,7 +270,9 @@
                         displayPosts(data);
                 })
             }
-             
+		
+             // display posts function //
+		
             function displayPosts(data){
                 var output = "";
                 
@@ -285,6 +300,8 @@
                 document.getElementById("posts").innerHTML = output;
             }
             
+		// active link function //
+		
             function setActiveLink(id){
                 document.getElementById("getAll").classList.remove("active");
                 document.getElementById("getPopular").classList.remove("active");
